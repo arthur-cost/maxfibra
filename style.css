@@ -87,9 +87,18 @@ section {
     text-align: center;
 }
 
+.section-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
 .section-image {
     max-width: 450px;
-    margin-left: 50px; /* Espaço entre imagem e texto */
+    margin: 20px auto;
+    display: block;
     border-radius: 5px;
 }
 
@@ -97,37 +106,22 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.client-text {
-    max-width: 600px;
-    font-size: 20px;
-    text-align: left; /* Alinha o texto à esquerda */
-    padding: 20px;
-    margin: 0 auto;
-    line-height: 1.7;
-}
-
-.service-text {
-    max-width: 600px;
-    font-size: 20px;
     text-align: center;
-    padding: 20px;
-    margin: 10 auto;
-    line-height: 1.7;
 }
 
-.clients-title {
+.client-text, .service-text {
+    max-width: 600px;
+    font-size: 20px;
+    padding: 20px;
+    line-height: 1.7;
     text-align: left;
-    font-size: 25px; /* Tamanho do título */
+}
+
+.clients-title, .services-title {
+    font-size: 25px;
     margin-bottom: 20px;
     color: #333;
-}
-
-.services-title {
-    text-align: right;
-    padding-right: 25%;
-    font-size: 24px;
+    text-align: center;
 }
 
 footer {
@@ -136,3 +130,60 @@ footer {
     text-align: center;
     padding: 20px;
 }
+
+/* Media Queries para Responsividade */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    header nav ul {
+        padding-top: 20px;
+    }
+
+    header nav ul li {
+        display: block;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .carousel-container {
+        height: 400px;
+    }
+
+    .carousel img {
+        height: 400px;
+    }
+
+    .section-content {
+        max-width: 90%;
+        font-size: 16px;
+    }
+
+    .client-section, .service-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .client-text, .service-text {
+        max-width: 90%;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .section-image {
+        max-width: 80%;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    .carousel-container {
+        height:
