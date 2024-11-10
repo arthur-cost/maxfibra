@@ -25,5 +25,3 @@ function autoSlide() {
 
 // Define o intervalo de 2.5 segundos
 setInterval(autoSlide, 2500);
-
-

@@ -20,7 +20,9 @@ header {
     background-color: #5271ff;
     color: #fff;
     padding: 10px 0;
-    text-align: center;
+    display: left; /* Usa flexbox */
+    justify-content: flex-start; /* Alinha o conteúdo à esquerda */
+    align-items: center; /* Garante que o conteúdo seja alinhado verticalmente */
 }
 
 header h1 {
@@ -49,8 +51,9 @@ header nav ul li a:hover {
 .carousel-container {
     position: relative;
     overflow: hidden;
-    max-width: 100%;
-    height: 600px;
+    width: 100%; /* Define a largura do carrossel como 100% */
+    height: 450px; /* Define a altura para alinhamento */
+    margin: 0 auto; 
 }
 
 .carousel {
@@ -87,6 +90,13 @@ section {
     text-align: center;
 }
 
+.section-title {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
 .section-content {
     max-width: 800px;
     margin: 0 auto;
@@ -117,19 +127,26 @@ section {
     text-align: left;
 }
 
-.clients-title, .services-title {
-    font-size: 25px;
-    margin-bottom: 20px;
-    color: #333;
-    text-align: center;
-}
 
 footer {
     background-color: #5271ff;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+    color: #fff;    
+    padding: 0,1px;
+    border-top: 3px solid #3e5dcc; /* Borda superior sutil */
+    align-items: center; /* Alinha os itens no centro */  
+    justify-content: center; /* Garante que o conteúdo será bem distribuído */
 }
+
+footer p {
+    text-align: center; /* Alinha o texto do &copy; no centro */
+    margin: 50  ;
+}
+
+.contato-footer {
+    text-align: left; /* Alinha o contato à esquerda */
+}
+    
+
 
 /* Media Queries para Responsividade */
 @media screen and (max-width: 768px) {
@@ -186,4 +203,10 @@ footer {
     }
 
     .carousel-container {
-        height:
+        height: 300px;
+    }
+
+    .carousel img {
+        height: 300px;
+    }
+}
