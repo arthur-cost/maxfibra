@@ -14,6 +14,18 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    display: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container1 {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 header {
@@ -31,8 +43,7 @@ header h1 {
 
 header nav ul {
     list-style: none;
-    padding-top: 10px;
-}
+    display: flex;}
 
 header nav ul li {
     display: inline-block;
@@ -46,6 +57,19 @@ header nav ul li a {
 
 header nav ul li a:hover {
     text-decoration: underline;
+}
+
+.cadastro-button {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #5271ff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.cadastro-button:hover {
+    background-color: #ffffff;
 }
 
 .carousel-container {
@@ -145,6 +169,53 @@ footer p {
 .contato-footer {
     text-align: left; /* Alinha o contato à esquerda */
 }
+
+/*cadastro*/
+
+#cadastro {
+    background-color: #f9f9f9;
+}
+
+.cadastro-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cadastro-form label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cadastro-form input, .cadastro-form select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    padding: 12px;
+    background-color: #5271ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #3e5dcc;
+}
+
+
     
 
 
@@ -208,5 +279,55 @@ footer p {
 
     .carousel img {
         height: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 40px;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    header nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .carousel-container {
+        height: 300px;
+    }
+
+    .carousel img {
+        object-fit: contain;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .client-section, .service-section {
+        flex-direction: column;
+    }
+
+    .client-text, .service-text {
+        font-size: 16px;
+    }
+
+    .submit-button {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    .container {
+        padding: 10px;
     }
 }
