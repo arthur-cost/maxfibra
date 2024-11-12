@@ -11,7 +11,7 @@
     <section id="cadastro">
         <div class="container">
             <h2 class="section-title">CADASTRE-SE</h2>
-            <form id="cadastroForm" class="cadastro-form" action="https://formspree.io/f/mwkabvqo" method="POST" onsubmit="return validarFormulario()">
+            <form class="cadastro-form" action="https://arthur-cost.github.io/maxfibra/" method="POST">
                 <label for="nome">Nome Completo:</label>
                 <input type="text" id="nome" name="nome" required>
 
@@ -32,28 +32,16 @@
                     <option value="ultra">Ultra - 1 GB</option>
                 </select>
 
-                <button type="submit" class="submit-button">Enviar Cadastro</button>
+                <button onclick="exibirAlerta()" type="submit" class="submit-button">Enviar Cadastro</button>
             </form>
         </div>
     </section>
 
     <script>
-        // Função de validação do formulário
-        function validarFormulario() {
-            var nome = document.getElementById("nome").value;
-            var email = document.getElementById("email").value;
-            var telefone = document.getElementById("telefone").value;
-            var endereco = document.getElementById("endereco").value;
-            var plano = document.getElementById("plano").value;
-
-            if (!nome || !email || !telefone || !endereco || !plano) {
-                alert("Por favor, preencha todos os campos.");
-                return false;  // Impede o envio do formulário
-            } else {
-                alert("Cadastro bem sucedido!");  // Alerta de sucesso
-                return true;  // Permite o envio do formulário
-            }
-        }
+        function exibirAlerta() {
+        alert("Cadastro bem sucedido!");
+        window.location.href = "https://arthur-cost.github.io/maxfibra/"; // Redireciona para a página principal
+    }
     </script>
 </body>
 </html>
