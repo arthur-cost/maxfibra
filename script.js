@@ -10,6 +10,7 @@ document.querySelectorAll('.nav-link').forEach(link => {
     });
 });
 
+
 // Carrossel de imagens
 let currentSlide = 0;
 
@@ -22,5 +23,6 @@ function moveSlide(direction) {
 
 // Rolagem automática do carrossel a cada 2,5 segundos
 setInterval(() => moveSlide(1), 2500);
+
 
 
