@@ -1,6 +1,4 @@
-// script.js
 
-// Navegação suave ao clicar nos links do menu
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', function(e) {
         e.preventDefault();
@@ -11,7 +9,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
 });
 
 
-// Carrossel de imagens
 let currentSlide = 0;
 
 function moveSlide(direction) {
@@ -21,8 +18,9 @@ function moveSlide(direction) {
     document.querySelector('.carousel').style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
-// Rolagem automática do carrossel a cada 2,5 segundos
+
 setInterval(() => moveSlide(1), 2500);
+
 
 
 
