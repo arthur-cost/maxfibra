@@ -384,4 +384,5 @@ footer {
 .section-content p, .client-text p, .service-text p {
     text-rendering: optimizeLegibility;
     hyphens: auto;
+
 }
