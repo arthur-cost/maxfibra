@@ -1,16 +1,16 @@
 <?php
-// Configurações do banco de dados
+
 $host = 'localhost';
 $dbname = 'maxfibra';
 $username = 'root';
 $password = '';
 
 try {
-    // Conexão com o MySQL
+    
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Cria a tabela se não existir
+    
     $sql = "CREATE TABLE IF NOT EXISTS cadastros (
         id INT AUTO_INCREMENT PRIMARY KEY,
         nome VARCHAR(100) NOT NULL,
@@ -22,13 +22,13 @@ try {
     $pdo->exec($sql);
 
 } catch(PDOException $e) {
-    // Se der erro na conexão, cria um arquivo texto como backup
+    
     file_put_contents('erro_log.txt', "Erro BD: " . $e->getMessage() . PHP_EOL, FILE_APPEND);
     $pdo = null;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Coleta os dados do formulário
+    
     $nome = htmlspecialchars($_POST['nome']);
     $telefone = htmlspecialchars($_POST['telefone']);
     $plano = htmlspecialchars($_POST['plano']);
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($pdo) {
         try {
-            // Insere no banco de dados
+            
             $stmt = $pdo->prepare("INSERT INTO cadastros (nome, telefone, plano, endereco) VALUES (?, ?, ?, ?)");
             $stmt->execute([$nome, $telefone, $plano, $endereco]);
             
@@ -47,12 +47,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mensagem = "Erro ao salvar no banco de dados. Seus dados foram salvos em arquivo local.";
             $tipo = "warning";
             
-            // Salva em arquivo texto como backup
+            
             $dados = "Nome: $nome | Telefone: $telefone | Plano: $plano | Endereço: $endereco" . PHP_EOL;
             file_put_contents('cadastros_backup.txt', $dados, FILE_APPEND);
         }
     } else {
-        // Se não conseguiu conectar ao BD, salva em arquivo
+        
         $dados = "Nome: $nome | Telefone: $telefone | Plano: $plano | Endereço: $endereco" . PHP_EOL;
         file_put_contents('cadastros_backup.txt', $dados, FILE_APPEND);
         
@@ -151,4 +151,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
 </body>
+    
 </html>
